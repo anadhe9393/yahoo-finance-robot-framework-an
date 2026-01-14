@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.7 on win32)" generated="2026-01-14T21:45:03.611491" rpa="false" schemaversion="5">
+<suite id="s1" name="CreateYahooAccount" source="C:\Users\avina\PycharmProjects\YahooFinance\tests\CreateYahooAccount.robot">
+<kw name="Open Browser To Yahoo Finance" owner="CommonKeywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-01-14T21:45:04.032441" level="INFO">Opening browser 'chrome' to base url 'https://finance.yahoo.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-01-14T21:45:04.032196" elapsed="2.597471"/>
+</kw>
+<status status="PASS" start="2026-01-14T21:45:04.031348" elapsed="2.598546"/>
+</kw>
+<test id="s1-t1" name="Create Yahoo Finance Account" line="11">
+<kw name="Click Sign In" owner="HomePage">
+<kw name="Handle Consent Popup If Present" owner="HomePage">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2026-01-14T21:45:51.801631" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-14T21:45:51.802012" level="FAIL">Element 'xpath=//button[contains(.,'Accept') or contains(.,'Agree')]' not visible after 5 seconds.</msg>
+<arg>${CONSENT_BTN}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2026-01-14T21:45:06.633009" elapsed="45.173363">Element 'xpath=//button[contains(.,'Accept') or contains(.,'Agree')]' not visible after 5 seconds.</status>
+</kw>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${CONSENT_BTN}</arg>
+<arg>5s</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-01-14T21:45:06.632715" elapsed="45.174092"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-14T21:45:51.808167" level="INFO">Clicking button 'xpath=//button[contains(.,'Accept') or contains(.,'Agree')]'.</msg>
+<msg time="2026-01-14T21:45:52.154886" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-01-14T21:45:52.155180" level="FAIL">Button with locator 'xpath=//button[contains(.,'Accept') or contains(.,'Agree')]' not found.</msg>
+<arg>${CONSENT_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="FAIL" start="2026-01-14T21:45:51.807595" elapsed="0.352122">Button with locator 'xpath=//button[contains(.,'Accept') or contains(.,'Agree')]' not found.</status>
+</kw>
+<arg>Click Button</arg>
+<arg>${CONSENT_BTN}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-01-14T21:45:51.807221" elapsed="0.352635"/>
+</kw>
+<status status="PASS" start="2026-01-14T21:45:06.632229" elapsed="45.527720"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${SIGN_IN_BTN}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-14T21:45:52.160097" elapsed="0.046457"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-14T21:45:52.207763" level="INFO">Clicking element 'xpath=//a[contains(@href,'login')]'.</msg>
+<arg>${SIGN_IN_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-14T21:45:52.206986" elapsed="3.739226"/>
+</kw>
+<status status="PASS" start="2026-01-14T21:45:06.631427" elapsed="49.315195"/>
+</kw>
+<kw name="Create New Yahoo Account" owner="SignUpPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-01-14T21:45:55.951268" level="INFO">Clicking element 'xpath=//a[contains(text(),'Create an')]'.</msg>
+<arg>${CREATE_ACCOUNT_LINK}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-14T21:45:55.950590" elapsed="2.611737"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FIRST_NAME_FIELD}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-01-14T21:45:58.562624" elapsed="0.079944"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-14T21:45:58.644066" level="INFO">Typing text 'Avinash' into text field 'id=reg-firstName'.</msg>
+<arg>${FIRST_NAME_FIELD}</arg>
+<arg>${FIRST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-14T21:45:58.643214" elapsed="0.692994"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-14T21:45:59.337494" level="INFO">Typing text 'Nadhe' into text field 'id=reg-lastName'.</msg>
+<arg>${LAST_NAME_FIELD}</arg>
+<arg>${LAST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-14T21:45:59.336675" elapsed="0.144900"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-14T21:45:59.482538" level="INFO">Typing text 'avinash_nadhe_12345@yahoo.com' into text field 'id=reg-email'.</msg>
+<arg>${EMAIL_FIELD}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-14T21:45:59.481805" elapsed="0.192149"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-01-14T21:45:59.675105" level="INFO">Typing text '1991' into text field 'id=reg-birthYear'.</msg>
+<arg>${BIRTH_YEAR_FIELD}</arg>
+<arg>${BIRTH_YEAR}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-14T21:45:59.674432" elapsed="0.143311"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-01-14T21:45:59.818696" level="INFO">Clicking button 'name=signup'.</msg>
+<arg>${CONTINUE_BTN}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-01-14T21:45:59.818171" elapsed="0.270426"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-14T21:46:00.089267" level="INFO">CAPTCHA or phone verification expected here</msg>
+<arg>CAPTCHA or phone verification expected here</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-14T21:46:00.089007" elapsed="0.000459"/>
+</kw>
+<status status="PASS" start="2026-01-14T21:45:55.949501" elapsed="4.140115"/>
+</kw>
+<status status="PASS" start="2026-01-14T21:45:06.630163" elapsed="53.460190"/>
+</test>
+<kw name="Close Browser" owner="CommonKeywords" type="TEARDOWN">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2026-01-14T21:46:00.093124" elapsed="2.752717"/>
+</kw>
+<status status="PASS" start="2026-01-14T21:46:00.092708" elapsed="2.753261"/>
+</kw>
+<status status="PASS" start="2026-01-14T21:45:03.612956" elapsed="59.233052"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="CreateYahooAccount" id="s1" pass="1" fail="0" skip="0">CreateYahooAccount</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
